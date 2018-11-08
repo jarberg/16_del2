@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Input {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public void mWriter(String input, String filePath)  {
         BufferedWriter writer;
@@ -77,16 +77,16 @@ public class Input {
         return playerName;
     }
 
-    public static boolean waitForInput(){
+    public boolean waitForInput(){
         boolean doNext = scanner.hasNext();
         return doNext;
     }
 
-    public static void waitForEnter(){
+    public void waitForEnter(){
         scanner.nextLine();
     }
 
-    public static void closeScanner(){
+    public void closeScanner(){
         scanner.close();
     }
 

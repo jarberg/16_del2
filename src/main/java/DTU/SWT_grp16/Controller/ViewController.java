@@ -5,19 +5,19 @@ import DTU.SWT_grp16.View.Output;
 
 public class ViewController {
 
-    public static void printNextTurnMessage(String name){
+    public void printNextTurnMessage(String name){
         Output.printNextTurnMessage(name);
     }
 
-    public static void waitForEnter(){
+    public void waitForEnter(){
         Input.waitForEnter();
     }
 
-    public static void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner){
+    public void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner){
         Output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner);
     }
 
-    public static void closeScanner(){
+    public void closeScanner(){
         Input.closeScanner();
     }
 

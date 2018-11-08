@@ -10,16 +10,16 @@ import java.util.Scanner;
 
 public class GameController{
 
-    private static int WIN_AMOUNT = 3000;
-    private static Player player1;
-    private static Player player2;
-    private static Playerlist playerlist;
-    private static DiceCup diceCup;
-    private static Board board;
-    private static Input input = new Input();
-    private static Scanner scanner = new Scanner(System.in);
+    private int WIN_AMOUNT = 3000;
+    private Player player1;
+    private Player player2;
+    private Playerlist playerlist;
+    private DiceCup diceCup;
+    private Board board;
+    private Input input = new Input();
+    private Scanner scanner = new Scanner(System.in);
 
-    public static void setupGame(){
+    public void setupGame(){
         //player1 = new Player(input.askPlayerName(1));
         //player2 = new Player(input.askPlayerName(2));
         player1 = new Player("Tommy");
@@ -31,7 +31,7 @@ public class GameController{
         board = new Board();
     }
 
-    public static void playGame(){
+    public void playGame(){
 
         Player currentPlayer = playerlist.getNextPlayer();
         String currentName = currentPlayer.getName();
@@ -68,7 +68,7 @@ public class GameController{
         ViewController.closeScanner();
     }
 
-    private static Field getFieldByID(int ID){
+    private Field getFieldByID(int ID){
         Field field = new Field();
         for(Field f : board.getFields()){
             if(ID == f.getID())

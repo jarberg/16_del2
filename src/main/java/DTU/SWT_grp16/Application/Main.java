@@ -5,8 +5,10 @@ import DTU.SWT_grp16.Controller.GameController;
 public class Main {
     public static void main(String[] args) {
 
-        GameController.setupGame();
-        GameController.playGame();
+        GameController game = new GameController();
+
+        game.setupGame();
+        game.playGame();
 
     }
 }
