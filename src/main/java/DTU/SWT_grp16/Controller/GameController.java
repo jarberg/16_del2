@@ -12,8 +12,6 @@ public class GameController{
 
     private ViewController viewController = new ViewController();
     private int WIN_AMOUNT = 3000;
-    private Player player1;
-    private Player player2;
     private Playerlist playerlist;
     private DiceCup diceCup;
     private Board board;
@@ -23,8 +21,8 @@ public class GameController{
     public void setupGame(){
         //player1 = new Player(input.askPlayerName(1));
         //player2 = new Player(input.askPlayerName(2));
-        player1 = new Player("Tommy");
-        player2 = new Player("Timme");
+        Player player1 = new Player("Tommy");
+        Player player2 = new Player("Timme");
 
         playerlist = new Playerlist(player1, player2);
 
