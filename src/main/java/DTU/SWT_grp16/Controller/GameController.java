@@ -17,10 +17,8 @@ public class GameController{
     ViewController view = new ViewController();
 
     public void setupGame(){
-
         view.printLanguageChoiceList();
         currentLanguage = view.setlanguage();
-
         setFilePath();
 
         diceCup = new DiceCup();
@@ -38,14 +36,11 @@ public class GameController{
         String player2Name = viewController.askName();
         if(player1Name.equals(player2Name))
             player2Name = player1Name + "#2";
-
         playerlist = new Playerlist(player1Name, player2Name);
-
         viewController.addPlayers(player1Name, player2Name);
     }
 
     public void playGame(){
-
         Player currentPlayer = playerlist.getCurrentPlayer();
         String currentName = currentPlayer.getName();
 
