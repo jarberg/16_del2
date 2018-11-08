@@ -6,14 +6,14 @@ public class Playerlist {
 
     private ArrayDeque<Player> playerList;
 
-    public Playerlist(Player... players){
+    public Playerlist(String... playerNames){
         playerList = new ArrayDeque<>();
-        addPlayers(players);
+        createAndAddPlayers(playerNames);
     }
 
-    private void addPlayers(Player... players){
-        for(Player player : players){
-            playerList.addLast(player);
+    private void createAndAddPlayers(String... names){
+        for(String name : names){
+            playerList.addLast(new Player(name));
         }
     }
 

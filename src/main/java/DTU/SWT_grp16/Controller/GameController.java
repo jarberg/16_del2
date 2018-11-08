@@ -16,11 +16,8 @@ public class GameController{
     public void setupGame(){
         String player1Name = viewController.askName();
         String player2Name = viewController.askName();
-        Player player1 = new Player(player1Name);
-        Player player2 = new Player(player2Name);
 
-        playerlist = new Playerlist(player1, player2);
-
+        playerlist = new Playerlist(player1Name, player2Name);
         diceCup = new DiceCup();
         board = new Board();
     }
