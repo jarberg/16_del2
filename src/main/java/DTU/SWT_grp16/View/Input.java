@@ -2,7 +2,6 @@ package DTU.SWT_grp16.View;
 
 import gui_main.GUI;
 
-import java.util.Arrays;
 import java.util.List;
 import java.io.*;
 import java.util.ArrayList;
@@ -12,6 +11,7 @@ public class Input {
 
     private Scanner scanner = new Scanner(System.in);
     private static int playerNumber;
+    private static String FIELD_DESCRIPTION_PATH;
     private static String FIELD_MESSAGE_PATH;
     private static String language="Dansk";
 
@@ -121,6 +121,22 @@ public class Input {
         return input;
     }
 
+    public static String getFieldDescriptionByID(int ID){
+        setFieldDescriptionPath();
+        StringBuilder stringBuilder = new StringBuilder();
+        try(BufferedReader reader = new BufferedReader(new FileReader(FIELD_DESCRIPTION_PATH))){
+            while(reader.ready()){
+                String lineRead = reader.readLine();
+                if(lineRead.startsWith("id:"+ID)){
+                    stringBuilder.append(lineRead.substring(5));
+                    break;
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return stringBuilder.toString();
+    }
     public static String getFieldMessageByID(int ID){
         setFieldMessagePath();
         StringBuilder stringBuilder = new StringBuilder();
@@ -129,6 +145,7 @@ public class Input {
                 String lineRead = reader.readLine();
                 if(lineRead.startsWith("id:"+ID)){
                     stringBuilder.append(lineRead.substring(5));
+                    break;
                 }
             }
         }catch(Exception e){
@@ -136,8 +153,11 @@ public class Input {
         }
         return stringBuilder.toString();
     }
-
-    private static void setFieldMessagePath(){
-        FIELD_MESSAGE_PATH = "src/main/textFiles/"+language+"/FieldDescriptions.txt";
+    private static void setFieldDescriptionPath(){
+        FIELD_DESCRIPTION_PATH = "src/main/textFiles/"+language+"/FieldDescriptions.txt";
     }
+    private static void setFieldMessagePath(){
+        FIELD_DESCRIPTION_PATH = "src/main/textFiles/"+language+"/FieldMessages.txt";
+    }
+
 }

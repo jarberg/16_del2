@@ -2,10 +2,10 @@ id:2 Et stort og højt tårn. Men mest stort.
 id:3 Et dybt og bredt krater. Men mest dybt.
 id:4 Nogle store og flotte porte.
 id:5 En kold ørken.
-id6: En by med en mur omkring den.
-id7: Et kloster med høje tårne.
-id8: En sort... eller meget mørk grotte.
-id9: Nogle hytter i bjergene.
-id10:Varemuren. Den kender alle.
-id11:Lidt ligesom krateret.
-id12:Guldminen.
+id:6 En by med en mur omkring den.
+id:7 Et kloster med høje tårne.
+id:8 En sort... eller meget mørk grotte.
+id:9 Nogle hytter i bjergene.
+id:10Varemuren. Den kender alle.
+id:11Lidt ligesom krateret.
+id:12Guldminen.

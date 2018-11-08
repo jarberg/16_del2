@@ -1,0 +1,11 @@
+id:2 You found a large tower and decided to climb it. You found $250$ at the top!
+id:3 You fell into the crater. $100$ was lost in the depths.
+id:4 You found some palace gates. You feel rich. $100$ gain.
+id:5 Nights in the desert are cold. So cold. You lose $20$.
+id:6 You make your way into a walled off city. Someone robbed you but you robbed him back. His purse was $180$ heavier.
+id:7 You walked into a monestary. You walked out of a monestary.
+id:8 You fumble your way through a black cave and manage to lose $70$
+id:9 You come upon some huts in the mountains. Money fell from the sky and you gained $60$
+id:10You come upon The Werewall, a sight so epic you tried to throw $80$ at it. You got a bonus turn!
+id:11You find a pit and look into it. The pit stares back, you lose $50$.
+id:12You come upon a goldmine, score! You gain $650$

@@ -14,7 +14,7 @@ public class ViewController {
     }
 
     public void addFieldToGUI(int id, String name){
-        String description = input.getFieldMessageByID(id);
+        String description = input.getFieldDescriptionByID(id);
         output.addFieldToGUI(id, name, description);
     }
 
