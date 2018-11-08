@@ -12,7 +12,7 @@ public class Board {
 
     private void setupFields(String[][] input){
         //Better implementation uses a file and gives Fields a name variable.
-        fields = new Field[13];
+        fields = new Field[input.length];
         for (int i = 0; i <fields.length ; i++) {
             int ID = i;
             String name = input[i][0];

@@ -1,11 +1,11 @@
-Tårnet:250:false
+Taarnet:250:false
 Krateret:-100:false
 Palads Porten:100:false
-Den Kolde Ørken:-20:false
-Den Bevægede By:180:false
+Den Kolde Oerken:-20:false
+Den Bevaeggede By:180:false
 Klosteret:0:false
 Den Sorte Hule:-70:false
 Hytter i Bjergene:60:false
-VarVæggen:-80:true
+VarVaeggen:-80:true
 Hullet:-50:false
 Guldminen:650:false
