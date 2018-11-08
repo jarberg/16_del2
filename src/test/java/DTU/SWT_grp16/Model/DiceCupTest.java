@@ -6,6 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class DiceCupTest {
 
     @Test
+    void shouldWorkWithFakeDice(){
+        DiceCup testCup = new DiceCupWithFakeDice();
+        testCup.roll();
+        assertEquals(2, testCup.getSum());
+    }
+
+    @Test
     void shouldReturnSumFromTwoToTwelve() {
         DiceCup testCup = new DiceCup();
         int sum = testCup.getSum();
