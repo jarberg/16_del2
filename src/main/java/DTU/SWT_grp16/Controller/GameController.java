@@ -34,7 +34,7 @@ public class GameController{
 
     public void playGame(){
 
-        Player currentPlayer = playerlist.getNextPlayer();
+        Player currentPlayer = playerlist.getCurrentPlayer();
         String currentName = currentPlayer.getName();
 
         viewController.printNextTurnMessage(currentName);

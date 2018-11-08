@@ -1,7 +1,6 @@
 package DTU.SWT_grp16.Model;
 
 import java.util.ArrayDeque;
-import java.util.Deque;
 
 public class Playerlist {
 
@@ -18,12 +17,12 @@ public class Playerlist {
         }
     }
 
-    public Player getNextPlayer(){
+    public Player getCurrentPlayer(){
         return playerList.getFirst();
     }
 
     public void changePlayerTurn(){
-        Player currentPlayer = getNextPlayer();
+        Player currentPlayer = getCurrentPlayer();
         boolean playerHasBonusTurn = currentPlayer.hasBonusTurn();
 
         if(playerHasBonusTurn){
