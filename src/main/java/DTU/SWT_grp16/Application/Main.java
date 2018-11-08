@@ -10,8 +10,8 @@ public class Main {
        GameController game = new GameController();
        Input input = new Input();
 
-       System.out.println( input.directoryList()[0]);
-       System.out.println( input.directoryList()[1]);
+       //System.out.println( input.directoryList()[0]);
+       //System.out.println( input.directoryList()[1]);
        game.setupGame();
        game.playGame();
 

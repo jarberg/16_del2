@@ -26,6 +26,11 @@ public class StringCollection {
         return stringBuilder.toString();
     }
 
+    public static String[] getRules(){
+        String[] rules = {"rule1", "rule2", "rule3"};
+        return rules;
+    }
+
     /*
     public static String getSomeStringYouWant(){
         stringBuilder = new StringBuilder();

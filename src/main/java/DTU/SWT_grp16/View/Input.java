@@ -1,5 +1,7 @@
 package DTU.SWT_grp16.View;
 
+import gui_main.GUI;
+
 import java.util.Arrays;
 import java.util.List;
 import java.io.*;
@@ -80,6 +82,12 @@ public class Input {
             break;
         }
         return playerName;
+    }
+
+    public String askPlayerName(GUI gui){
+        playerNumber++;
+        String name = gui.getUserString("Player "+playerNumber+". Insert your name.");
+        return name;
     }
 
     public boolean waitForInput(){

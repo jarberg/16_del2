@@ -15,12 +15,25 @@ public class GameController{
 
 
     public void setupGame(){
-        String player1Name = viewController.askName();
-        String player2Name = viewController.askName();
-
-        playerlist = new Playerlist(player1Name, player2Name);
         diceCup = new DiceCup();
         board = new Board();
+        viewController.guiSetup();
+        for(Field field : board.getFields()){
+            int fieldID = field.getID();
+            String name = field.getName();
+            if(fieldID >= 2)
+                viewController.addFieldToGUI(fieldID,name);
+        }
+        viewController.makeGUI();
+
+        String player1Name = viewController.askName();
+        String player2Name = viewController.askName();
+        if(player1Name.equals(player2Name))
+            player2Name = player1Name + "#2";
+
+        playerlist = new Playerlist(player1Name, player2Name);
+
+        viewController.addPlayers(player1Name, player2Name);
     }
 
     public void playGame(){
@@ -29,7 +42,7 @@ public class GameController{
         String currentName = currentPlayer.getName();
 
         viewController.printNewTurnMessage(currentName);
-        viewController.waitForEnter();
+        //viewController.waitForEnter();
 
         diceCup.roll();
         int sum = diceCup.getSum();
@@ -41,7 +54,7 @@ public class GameController{
         int balance = currentPlayer.getBalance();
         boolean bonusTurn = currentPlayer.hasBonusTurn();
         boolean isWinner = currentPlayer.isWinner();
-        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner);
+        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner, currentPlayer.getName());
 
         boolean gameIsNotOver = !currentPlayer.isWinner();
         if(gameIsNotOver){
