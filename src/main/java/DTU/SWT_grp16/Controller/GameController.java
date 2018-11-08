@@ -4,9 +4,6 @@ import DTU.SWT_grp16.Model.*;
 import DTU.SWT_grp16.Model.Board;
 import DTU.SWT_grp16.Model.DiceCup;
 import DTU.SWT_grp16.Model.Player;
-import DTU.SWT_grp16.View.Input;
-
-import java.util.Scanner;
 
 public class GameController{
 
@@ -15,14 +12,12 @@ public class GameController{
     private Playerlist playerlist;
     private DiceCup diceCup;
     private Board board;
-    private Input input = new Input();
-    private Scanner scanner = new Scanner(System.in);
 
     public void setupGame(){
-        //player1 = new Player(input.askPlayerName(1));
-        //player2 = new Player(input.askPlayerName(2));
-        Player player1 = new Player("Tommy");
-        Player player2 = new Player("Timme");
+        String player1Name = viewController.askName();
+        String player2Name = viewController.askName();
+        Player player1 = new Player(player1Name);
+        Player player2 = new Player(player2Name);
 
         playerlist = new Playerlist(player1, player2);
 

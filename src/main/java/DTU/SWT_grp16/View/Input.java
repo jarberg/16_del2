@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Input {
 
     private Scanner scanner = new Scanner(System.in);
+    private static int playerNumber;
 
     public void mWriter(String input, String filePath)  {
         BufferedWriter writer;
@@ -67,7 +68,8 @@ public class Input {
         return finalFields;
     }
 
-    public String askPlayerName(int playerNumber){
+    public String askPlayerName(){
+        playerNumber++;
         String playerName = "";
         System.out.println("player"+playerNumber+" : input name");
         while(waitForInput()){
