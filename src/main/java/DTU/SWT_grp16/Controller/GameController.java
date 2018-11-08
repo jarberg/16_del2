@@ -55,7 +55,7 @@ public class GameController{
         int balance = currentPlayer.getBalance();
         boolean bonusTurn = currentPlayer.hasBonusTurn();
         boolean isWinner = currentPlayer.isWinner();
-        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner, currentPlayer.getName());
+        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner, currentPlayer.getName(), currentField.getPoints());
 
         boolean gameIsNotOver = !currentPlayer.isWinner();
         if(gameIsNotOver){

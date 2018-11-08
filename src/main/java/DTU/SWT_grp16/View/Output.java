@@ -59,7 +59,7 @@ public class Output {
         GUI_Street street = new GUI_Street();
         street.setTitle(name);
         street.setSubText("");
-        street.setDescription("this is a description");
+        street.setDescription("");
         fields[id] = street;
     }
 
@@ -79,7 +79,9 @@ public class Output {
         gui.displayChanceCard(stringBuilder.toString());
     }
 
-    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name){
+    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name, int points){
+
+        gui.showMessage("You rolled "+diceSum+"!");
         GUI_Player player;
         if(name.equals(player1.getName()))
             player = player1;
@@ -92,6 +94,8 @@ public class Output {
         fields[0].setCar(player,false);
         fields[ID].setCar(player,true);
         player.setBalance(balance);
+
+        gui.showMessage("Your points changed by "+points);
 
         if(bonusTurn)
             gui.showMessage("You got a bonus turn!");

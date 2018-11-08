@@ -31,8 +31,8 @@ public class ViewController {
         output.printNewTurnMessage(name);
     }
 
-    public void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner, String name){
-        output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner, name);
+    public void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner, String name, int points){
+        output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner, name, points);
     }
 
     public void closeScanner(){
