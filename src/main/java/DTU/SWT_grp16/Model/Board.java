@@ -2,6 +2,7 @@ package DTU.SWT_grp16.Model;
 import DTU.SWT_grp16.View.Input;
 
 public class Board {
+    //Refactor to setupFieldsFromFile method in GameController?
     Input input = new Input();
     private Field[] fields;
 

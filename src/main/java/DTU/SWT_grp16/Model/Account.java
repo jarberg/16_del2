@@ -7,7 +7,6 @@ public class Account {
 
     public Account(){
         this.balance = initialAmount;
-
     }
 
     public int getBalance(){
