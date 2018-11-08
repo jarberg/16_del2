@@ -8,5 +8,6 @@ class MainTest {
 
     @Test
     void main() {
+
     }
 }
