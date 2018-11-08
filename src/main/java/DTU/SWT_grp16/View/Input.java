@@ -153,11 +153,12 @@ public class Input {
         }
         return stringBuilder.toString();
     }
+
     private static void setFieldDescriptionPath(){
         FIELD_DESCRIPTION_PATH = "src/main/textFiles/"+language+"/FieldDescriptions.txt";
     }
     private static void setFieldMessagePath(){
-        FIELD_DESCRIPTION_PATH = "src/main/textFiles/"+language+"/FieldMessages.txt";
+        FIELD_MESSAGE_PATH = "src/main/textFiles/"+language+"/FieldMessages.txt";
     }
 
 }

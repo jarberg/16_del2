@@ -79,9 +79,9 @@ public class Output {
         gui.displayChanceCard(stringBuilder.toString());
     }
 
-    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name, int points){
+    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name, int points, String message){
 
-        gui.showMessage("You rolled "+diceSum+"!");
+        gui.showMessage("You rolled "+diceSum+"!"+" "+message);
         GUI_Player player;
         if(name.equals(player1.getName()))
             player = player1;
@@ -94,8 +94,6 @@ public class Output {
         fields[0].setCar(player,false);
         fields[ID].setCar(player,true);
         player.setBalance(balance);
-
-        gui.showMessage("Your points changed by "+points);
 
         if(bonusTurn)
             gui.showMessage("You got a bonus turn!");
