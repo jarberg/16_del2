@@ -29,7 +29,7 @@ public class GameController{
 
         playerlist = new Playerlist(player1Name, player2Name);
         diceCup = new DiceCup();
-        board = new Board();
+        board = new Board(filePath+"\\Fields.txt");
     }
 
     public void playGame(){

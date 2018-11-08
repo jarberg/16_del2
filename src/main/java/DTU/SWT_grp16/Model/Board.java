@@ -6,8 +6,8 @@ public class Board {
     Input input = new Input();
     private Field[] fields;
 
-    public Board(){
-        setupFields(input.readFileField());
+    public Board(String filePath){
+        setupFields(input.readFileField(filePath));
     }
 
     private void setupFields(String[][] input){

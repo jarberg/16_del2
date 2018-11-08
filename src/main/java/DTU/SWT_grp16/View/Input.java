@@ -44,9 +44,9 @@ public class Input {
         return list;
     }
 
-    public String[][] readFileField(){
+    public String[][] readFileField(String filePath){
 
-        List<String> test= mReader("src/main/textFiles/Dansk/Fields.txt");
+        List<String> test= mReader(filePath);
         String[] fields = test.toArray(new String[0]);
         String[] endFields = new String[fields.length+2];
 
