@@ -73,30 +73,10 @@ public class Input {
         return finalFields;
     }
 
-    public String askPlayerName(){
-        playerNumber++;
-        String playerName = "";
-        System.out.println("player"+playerNumber+" : input name");
-        while(waitForInput()){
-            playerName = scanner.nextLine();
-            break;
-        }
-        return playerName;
-    }
-
     public String askPlayerName(GUI gui){
         playerNumber++;
         String name = gui.getUserString("Player "+playerNumber+". Insert your name.");
         return name;
-    }
-
-    public boolean waitForInput(){
-        boolean doNext = scanner.hasNext();
-        return doNext;
-    }
-
-    public void waitForEnter(){
-        scanner.nextLine();
     }
 
     public void closeScanner(){
@@ -134,10 +114,9 @@ public class Input {
 
         return languagechoice;
     }
-    public String getLanguage(){return language;}
 
     public String getInput(){
-        String getInput = scanner.nextLine();
-        return getInput;
+        String input = scanner.nextLine();
+        return input;
     }
 }
