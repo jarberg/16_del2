@@ -12,11 +12,19 @@ public class GameController{
     private Playerlist playerlist;
     private DiceCup diceCup;
     private Board board;
-
+    private String currentLanguage="";
+    private String filePath ;
+    ViewController view = new ViewController();
 
     public void setupGame(){
+        /*
+        view.printLanguageChoiceList();
+        currentLanguage = view.setlanguage();
+        System.out.println("du har valgt "+currentLanguage);
+        setFilePath();
+         */
         diceCup = new DiceCup();
-        board = new Board();
+        board = new Board(filePath+"\\Fields.txt");
         viewController.guiSetup();
         for(Field field : board.getFields()){
             int fieldID = field.getID();
@@ -83,6 +91,10 @@ public class GameController{
         if(player.getBalance() >= WIN_AMOUNT){
             player.setWinner(true);
         }
+    }
+
+    public void setFilePath(){
+        filePath="src/main/textFiles/"+currentLanguage;
     }
 
 }

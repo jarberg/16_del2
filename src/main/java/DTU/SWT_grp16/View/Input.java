@@ -13,7 +13,7 @@ public class Input {
     private Scanner scanner = new Scanner(System.in);
     private static int playerNumber;
     private String language="Dansk";
-    private String filePath ="";
+
 
     public void mWriter(String input, String filePath)  {
         BufferedWriter writer;
@@ -47,9 +47,9 @@ public class Input {
         return list;
     }
 
-    public String[][] readFileField(){
+    public String[][] readFileField(String filePath){
 
-        List<String> test= mReader("src/main/textFiles/Dansk/Fields.txt");
+        List<String> test= mReader(filePath);
         String[] fields = test.toArray(new String[0]);
         String[] endFields = new String[fields.length+2];
 
@@ -103,31 +103,41 @@ public class Input {
         scanner.close();
     }
 
-    public String[] directoryList(){
+    private String[] directoryList(){
         File[] directories = new File("src/main/textFiles/").listFiles(File::isDirectory);
         String[] shortLanguage = new String[directories.length];
-
-
-        for (int i = 0; i <directories.length ; i++) {
+        for (int i = 0; i <shortLanguage.length ; i++) {
             String path= String.valueOf(directories[i]);
             String[] languageListPath =path.split("\\\\");
             shortLanguage[i] = languageListPath[languageListPath.length-1];
         }
         return shortLanguage;
     }
+    public String[] getLanguageChoices(){
+        return directoryList();
+    }
 
-    public void setLanguage(String language){
+    public String setLanguage(String[] language){
+        String languagechoice = getInput();
 
-        this.language = language;
-        this. filePath = ("src/main/textFiles/");
+        boolean languageExists = false;
+        for (int i = 0; i <language.length ; i++) {
+            if (language[i].contains(languagechoice)) {
+                languageExists = true;
+                break;
+            }
+        }
+            if(languageExists){
 
+                this.language = languagechoice;
+            }
+
+        return languagechoice;
     }
     public String getLanguage(){return language;}
 
     public String getInput(){
-
-        return null;
+        String getInput = scanner.nextLine();
+        return getInput;
     }
-
-
 }

@@ -1,5 +1,3 @@
-Nathing:0:false
-Nathing:0:false
 Tårnet:250:false
 Krateret:-100:false
 Palads Porten:100:false

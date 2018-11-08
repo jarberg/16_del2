@@ -82,6 +82,12 @@ public class Output {
         String fieldMessage = StringCollection.getFieldMessageByID(fieldID);
         System.out.println(fieldMessage);
     }
+
+    public String getFieldName(String currentField){
+        String fieldName ="";
+        return fieldName;
+    }
+
     public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name){
         GUI_Player player;
         if(name.equals(player1.getName()))
@@ -109,10 +115,16 @@ public class Output {
         for (int i = 0; i < choices.length ; i++) {
             System.out.print(choices+" : ");
         }
-
-
-        //choice = scan.nextLine();
-
         return choice;
+    }
+    public String[] printLanguageChoices(String[] choiceList){
+        for (int i = 0; i <choiceList.length ; i++) {
+            System.out.print(choiceList[i]+"  ");
+        }
+        System.out.println(" ");
+        return choiceList;
+    }
+    public String printLanguage(String language){
+        return language;
     }
 }
