@@ -17,12 +17,12 @@ public class GameController{
     ViewController view = new ViewController();
 
     public void setupGame(){
-        /*
+
         view.printLanguageChoiceList();
         currentLanguage = view.setlanguage();
         System.out.println("du har valgt "+currentLanguage);
         setFilePath();
-         */
+
         diceCup = new DiceCup();
         board = new Board(filePath+"\\Fields.txt");
         viewController.guiSetup();

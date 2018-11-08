@@ -95,6 +95,9 @@ public class Output {
         else
             player = player2;
 
+        for(GUI_Field field : fields){
+            field.setCar(player,false);
+        }
         fields[0].setCar(player,false);
         fields[ID].setCar(player,true);
         player.setBalance(balance);
