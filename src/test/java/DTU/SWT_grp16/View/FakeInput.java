@@ -1,12 +1,11 @@
 package DTU.SWT_grp16.View;
-
 import gui_main.GUI;
 import java.util.List;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Input {
+public class FakeInput extends Input{
 
     private Scanner scanner = new Scanner(System.in);
     private static int playerNumber;
@@ -71,37 +70,8 @@ public class Input {
         return finalFields;
     }
 
-    public String askPlayerName(){
-        playerNumber++;
-        String playerName = "";
-        System.out.println("player"+playerNumber+" : input name");
-        while(waitForInput()){
-            playerName = scanner.nextLine();
-            break;
-        }
-        return playerName;
-    }
 
-    public String askPlayerName(GUI gui){
-        playerNumber++;
-        String name = gui.getUserString("Player "+playerNumber+". Insert your name.");
-        return name;
-    }
-
-    public boolean waitForInput(){
-        boolean doNext = scanner.hasNext();
-        return doNext;
-    }
-
-    public void waitForEnter(){
-        scanner.nextLine();
-    }
-
-    public void closeScanner(){
-        scanner.close();
-    }
-
-    private String[] directoryList(){
+    public String[] getLanguageChoices(){
         File[] directories = new File("src/main/textFiles/").listFiles(File::isDirectory);
         String[] shortLanguage = new String[directories.length];
         for (int i = 0; i <shortLanguage.length ; i++) {
@@ -111,12 +81,10 @@ public class Input {
         }
         return shortLanguage;
     }
-    public String[] getLanguageChoices(){
-        return directoryList();
-    }
 
-    public String setLanguage(String[] language){
-        String languagechoice = getInput();
+
+    public String setLanguage(String[] language, String input){
+        String languagechoice = input;
 
         boolean languageExists = false;
         for (int i = 0; i <language.length ; i++) {
@@ -125,17 +93,11 @@ public class Input {
                 break;
             }
         }
-            if(languageExists){
+        if(languageExists){
 
-                this.language = languagechoice;
-            }
+            this.language = languagechoice;
+        }
 
         return languagechoice;
-    }
-    public String getLanguage(){return language;}
-
-    public String getInput(){
-        String getInput = scanner.nextLine();
-        return getInput;
     }
 }

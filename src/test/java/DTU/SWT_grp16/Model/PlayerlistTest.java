@@ -7,24 +7,24 @@ class PlayerlistTest {
 
     String player1 ="bob";
     String player2 = "ida";
-    Playerlist playerList;
-    FakePlayerList PlayerList = new FakePlayerList(player1, player2);
+    Playerlist playerList = new Playerlist(player1, player2);;
+
 
     @Test
     void getCurrentPlayer() {
-        assertEquals(player1, PlayerList.getCurrentPlayer().getName());
+        assertEquals(player1, playerList.getCurrentPlayer().getName());
     }
 
     @Test
     void changePlayerTurn() {
-        assertEquals(player1, PlayerList.getCurrentPlayer().getName());
-        PlayerList.changePlayerTurn();
-        assertEquals(player2, PlayerList.getCurrentPlayer().getName());
-        PlayerList.changePlayerTurn();
-        assertEquals(player1, PlayerList.getCurrentPlayer().getName());
-        PlayerList.changePlayerTurn();
-        assertEquals(player2, PlayerList.getCurrentPlayer().getName());
-        PlayerList.changePlayerTurn();
-        assertEquals(player1, PlayerList.getCurrentPlayer().getName());
+        assertEquals(player1, playerList.getCurrentPlayer().getName());
+        playerList.changePlayerTurn();
+        assertEquals(player2, playerList.getCurrentPlayer().getName());
+        playerList.changePlayerTurn();
+        assertEquals(player1, playerList.getCurrentPlayer().getName());
+        playerList.changePlayerTurn();
+        assertEquals(player2, playerList.getCurrentPlayer().getName());
+        playerList.changePlayerTurn();
+        assertEquals(player1, playerList.getCurrentPlayer().getName());
     }
 }
