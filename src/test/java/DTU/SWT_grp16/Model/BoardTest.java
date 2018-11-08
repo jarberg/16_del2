@@ -1,14 +1,12 @@
-package DTU.SWT_grp16.Application;
+package DTU.SWT_grp16.Model;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
-    public Boolean stubs = false;
+class BoardTest {
 
     @Test
-    void main() {
-
+    void getFields() {
     }
 }
