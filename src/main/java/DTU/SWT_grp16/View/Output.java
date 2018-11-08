@@ -1,9 +1,5 @@
 package DTU.SWT_grp16.View;
 
-import DTU.SWT_grp16.View.StringCollection;
-
-import java.util.Scanner;
-
 public class Output {
 
     public Output(){
@@ -13,30 +9,41 @@ public class Output {
         String fieldMessage = StringCollection.getFieldMessageByID(fieldID);
         System.out.println(fieldMessage);
     }
-    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner){
+    public String getFieldName(String currentField){
+        String fieldName ="";
+        return fieldName;
+    }
+
+    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name){
         System.out.println("du rullede "+diceSum);
-        System.out.println("du landede "+ID);
+        System.out.println("du landede på "+name);
         System.out.println("din balance er "+balance);
         if(bonusTurn) {
             System.out.println("vent lidt");
         }
         if (isWinner){
-            System.out.println("taber!");
+            System.out.println("Winner!");
         }
     }
     public void printNewTurnMessage(String name){
 
-        System.out.println(name);
+        System.out.println(name+"'s turn");
     }
     public String askForLanguage(String[] choices){
         String choice ="";
         for (int i = 0; i < choices.length ; i++) {
             System.out.print(choices+" : ");
         }
-
-
-        //choice = scan.nextLine();
-
         return choice;
+    }
+    public String[] printLanguageChoices(String[] choiceList){
+        for (int i = 0; i <choiceList.length ; i++) {
+            System.out.print(choiceList[i]+"  ");
+        }
+        System.out.println(" ");
+        return choiceList;
+    }
+    public String printLanguage(String language){
+        return language;
     }
 }

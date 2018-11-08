@@ -12,9 +12,18 @@ public class GameController{
     private Playerlist playerlist;
     private DiceCup diceCup;
     private Board board;
-
+    private String currentLanguage="";
+    private String filePath ;
+    ViewController view = new ViewController();
 
     public void setupGame(){
+
+        view.printLanguageChoiceList();
+        currentLanguage = view.setlanguage();
+        System.out.println("du har valgt "+currentLanguage);
+        setFilePath();
+
+
         String player1Name = viewController.askName();
         String player2Name = viewController.askName();
 
@@ -41,7 +50,8 @@ public class GameController{
         int balance = currentPlayer.getBalance();
         boolean bonusTurn = currentPlayer.hasBonusTurn();
         boolean isWinner = currentPlayer.isWinner();
-        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner);
+        String name = currentField.getName();
+        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner, name);
 
         boolean gameIsNotOver = !currentPlayer.isWinner();
         if(gameIsNotOver){
@@ -70,6 +80,10 @@ public class GameController{
         if(player.getBalance() >= WIN_AMOUNT){
             player.setWinner(true);
         }
+    }
+
+    public void setFilePath(){
+        filePath="src/main/textFiles/"+currentLanguage;
     }
 
 }

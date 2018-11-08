@@ -16,8 +16,8 @@ public class ViewController {
         input.waitForEnter();
     }
 
-    public void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner){
-        output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner);
+    public void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner, String name){
+        output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner, name);
     }
 
     public void closeScanner(){
@@ -26,5 +26,21 @@ public class ViewController {
 
     public String askName(){
         return input.askPlayerName();
+    }
+
+    public void printLanguageChoiceList(){
+        output.printLanguageChoices(input.getLanguageChoices());
+    }
+
+
+    public String setlanguage(){
+        String currentLanguage = input.setLanguage(input.getLanguageChoices());
+        return currentLanguage;
+    }
+    public void printLanguage(){
+        System.out.println(output.printLanguage(input.getLanguage()));
+    }
+    public void getFieldinfo(){
+
     }
 }
