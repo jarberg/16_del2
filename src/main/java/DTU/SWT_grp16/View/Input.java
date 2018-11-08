@@ -1,5 +1,6 @@
 package DTU.SWT_grp16.View;
 
+import java.util.Arrays;
 import java.util.List;
 import java.io.*;
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ public class Input {
 
     private Scanner scanner = new Scanner(System.in);
     private static int playerNumber;
+    private String language="Dansk";
+    private String filePath ="";
 
     public void mWriter(String input, String filePath)  {
         BufferedWriter writer;
@@ -44,7 +47,7 @@ public class Input {
 
     public String[][] readFileField(){
 
-        List<String> test= mReader("src/Fields.txt");
+        List<String> test= mReader("src/main/textFiles/Dansk/Fields.txt");
         String[] fields = test.toArray(new String[0]);
         String[] endFields = new String[fields.length+2];
 
@@ -91,5 +94,32 @@ public class Input {
     public void closeScanner(){
         scanner.close();
     }
+
+    public String[] directoryList(){
+        File[] directories = new File("src/main/textFiles/").listFiles(File::isDirectory);
+        String[] shortLanguage = new String[directories.length];
+
+
+        for (int i = 0; i <directories.length ; i++) {
+            String path= String.valueOf(directories[i]);
+            String[] languageListPath =path.split("\\\\");
+            shortLanguage[i] = languageListPath[languageListPath.length-1];
+        }
+        return shortLanguage;
+    }
+
+    public void setLanguage(String language){
+
+        this.language = language;
+        this. filePath = ("src/main/textFiles/");
+
+    }
+    public String getLanguage(){return language;}
+
+    public String getInput(){
+
+        return null;
+    }
+
 
 }

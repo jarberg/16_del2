@@ -13,6 +13,7 @@ public class GameController{
     private DiceCup diceCup;
     private Board board;
 
+
     public void setupGame(){
         String player1Name = viewController.askName();
         String player2Name = viewController.askName();
