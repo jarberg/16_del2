@@ -1,0 +1,11 @@
+Tower:250:false
+Crater:-100:false
+Palace Gates:100:false
+Cold Desert:-20:false
+Walled City:180:false
+Monestary:0:false
+Black Cave:-70:false
+Huts In The Mountain:60:false
+The Werewall:-80:true
+The Pit:-50:false
+Goldmine:650:false
