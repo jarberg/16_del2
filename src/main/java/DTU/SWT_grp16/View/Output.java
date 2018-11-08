@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class Output {
 
-    private static int MAX_FIELD_COUNT = 40;
+    private static int MAX_FIELD_COUNT = 30;
     private static int GAME_FIELD_COUNT = 12;
     private GUI_Field[] fields;
     private GUI gui;

@@ -10,4 +10,12 @@ public class DiceCupWithFakeDice extends DiceCup {
         this.die2 = new FakeDie();
     }
 
+    @Override
+    public int getSum(){
+        int sum = 0;
+        sum += die1.getValue();
+        sum += die2.getValue();
+        return sum;
+    }
+
 }
