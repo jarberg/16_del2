@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class GameController{
 
+    private ViewController viewController = new ViewController();
     private int WIN_AMOUNT = 3000;
     private Player player1;
     private Player player2;
@@ -36,8 +37,8 @@ public class GameController{
         Player currentPlayer = playerlist.getNextPlayer();
         String currentName = currentPlayer.getName();
 
-        ViewController.printNextTurnMessage(currentName);
-        ViewController.waitForEnter();
+        viewController.printNextTurnMessage(currentName);
+        viewController.waitForEnter();
 
 
         diceCup.roll();
@@ -58,14 +59,14 @@ public class GameController{
         int balance = currentPlayer.getBalance();
         boolean bonusTurn = currentPlayer.hasBonusTurn();
         boolean isWinner = currentPlayer.isWinner();
-        ViewController.printTurnResult(sum, id, balance, bonusTurn, isWinner);
+        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner);
 
         boolean gameIsNotOver = !currentPlayer.isWinner();
         if(gameIsNotOver){
             playerlist.changePlayerTurn();
             playGame();
         }
-        ViewController.closeScanner();
+        viewController.closeScanner();
     }
 
     private Field getFieldByID(int ID){
