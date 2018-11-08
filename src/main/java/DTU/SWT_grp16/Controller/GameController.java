@@ -30,20 +30,11 @@ public class GameController{
         viewController.printNewTurnMessage(currentName);
         viewController.waitForEnter();
 
-
         diceCup.roll();
         int sum = diceCup.getSum();
         Field currentField = getFieldByID(sum);
 
-        int pointChange = currentField.getPoints();
-        currentPlayer.addToBalance(pointChange);
-
-        if(currentField.hasBonusTurn())
-            currentPlayer.setBonusTurn(true);
-
-        if(currentPlayer.getBalance() >= WIN_AMOUNT){
-            currentPlayer.setWinner(true);
-        }
+        resolveTurnLogic(currentPlayer, currentField);
 
         int id = currentField.getID();
         int balance = currentPlayer.getBalance();
@@ -66,6 +57,18 @@ public class GameController{
                 field = f;
         }
         return field;
+    }
+
+    private void resolveTurnLogic(Player player, Field field){
+        int pointChange = field.getPoints();
+        player.addToBalance(pointChange);
+
+        if(field.hasBonusTurn())
+            player.setBonusTurn(true);
+
+        if(player.getBalance() >= WIN_AMOUNT){
+            player.setWinner(true);
+        }
     }
 
 }
