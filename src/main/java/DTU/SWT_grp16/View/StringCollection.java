@@ -5,16 +5,11 @@ import java.io.FileReader;
 
 public class StringCollection {
 
-    //Todo: refactor methods to avoid duplication.
-
-    private static StringBuilder stringBuilder;
-    private static String FIELD_TEXT_PATH = "fieldMessages.txt";
-    private static String MESSAGE_PATH = "Messages.txt";
-
-
-
     public static String[] getRules(){
-        String[] rules = {"rule1", "rule2", "rule3"};
+        String[] rules = {"International Rules of Greenscreen McGreendale Dicegame:",
+                "The players take turns rolling two dice for a sum",
+                "You land on the appropriate field, and something happens!",
+                "First to 3000 wins"};
         return rules;
     }
 
