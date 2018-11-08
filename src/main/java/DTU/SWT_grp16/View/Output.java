@@ -81,6 +81,7 @@ public class Output {
     public void printFieldMessage(int fieldID){
         String fieldMessage = StringCollection.getFieldMessageByID(fieldID);
         System.out.println(fieldMessage);
+
     }
 
     public String getFieldName(String currentField){

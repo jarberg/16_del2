@@ -27,7 +27,6 @@ public class ViewController {
         output.addPlayers(name1, name2);
     }
 
-
     public void printNewTurnMessage(String name){
         output.printNewTurnMessage(name);
     }
@@ -44,11 +43,7 @@ public class ViewController {
         input.closeScanner();
     }
 
-    /*
-    public String askName(){
-        return input.askPlayerName();
-    }
-*/
+
     public String askName(){
         return input.askPlayerName(output.getGUI());
     }
@@ -63,10 +58,5 @@ public class ViewController {
         String currentLanguage = input.setLanguage(input.getLanguageChoices());
         return currentLanguage;
     }
-    public void printLanguage(){
-        System.out.println(output.printLanguage(input.getLanguage()));
-    }
-    public void getFieldinfo(){
 
-    }
 }

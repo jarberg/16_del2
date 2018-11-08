@@ -20,7 +20,7 @@ public class GameController{
 
         view.printLanguageChoiceList();
         currentLanguage = view.setlanguage();
-        System.out.println("du har valgt "+currentLanguage);
+
         setFilePath();
 
         diceCup = new DiceCup();
