@@ -13,7 +13,7 @@ public class Input {
     private Scanner scanner = new Scanner(System.in);
     private static int playerNumber;
     private static String FIELD_MESSAGE_PATH;
-    private String language="Dansk";
+    private static String language="Dansk";
 
 
     public void mWriter(String input, String filePath)  {
@@ -122,6 +122,7 @@ public class Input {
     }
 
     public static String getFieldMessageByID(int ID){
+        setFieldMessagePath();
         StringBuilder stringBuilder = new StringBuilder();
         try(BufferedReader reader = new BufferedReader(new FileReader(FIELD_MESSAGE_PATH))){
             while(reader.ready()){
@@ -134,5 +135,9 @@ public class Input {
             System.out.println(e.getMessage());
         }
         return stringBuilder.toString();
+    }
+
+    private static void setFieldMessagePath(){
+        FIELD_MESSAGE_PATH = "src/main/textFiles/"+language+"/FieldDescriptions.txt";
     }
 }

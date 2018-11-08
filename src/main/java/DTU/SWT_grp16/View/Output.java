@@ -55,11 +55,11 @@ public class Output {
         fields[0].setCar(player2, true);
     }
 
-    public void addFieldToGUI(int id, String name){
+    public void addFieldToGUI(int id, String name, String description){
         GUI_Street street = new GUI_Street();
         street.setTitle(name);
         street.setSubText("");
-        street.setDescription("");
+        street.setDescription(description);
         fields[id] = street;
     }
 
