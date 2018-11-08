@@ -5,7 +5,7 @@ import java.util.Deque;
 
 public class Playerlist {
 
-    private Deque<Player> playerList;
+    private ArrayDeque<Player> playerList;
 
     public Playerlist(Player... players){
         playerList = new ArrayDeque<>();
