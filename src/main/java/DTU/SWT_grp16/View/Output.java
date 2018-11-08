@@ -2,6 +2,8 @@ package DTU.SWT_grp16.View;
 
 import DTU.SWT_grp16.View.StringCollection;
 
+import java.util.Scanner;
+
 public class Output {
 
     public Output(){
@@ -25,5 +27,16 @@ public class Output {
     public void printNextTurnMessage(String name){
 
         System.out.println(name);
+    }
+    public String askForLanguage(String[] choices){
+        String choice ="";
+        for (int i = 0; i < choices.length ; i++) {
+            System.out.print(choices+" : ");
+        }
+
+
+        //choice = scan.nextLine();
+
+        return choice;
     }
 }
