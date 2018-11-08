@@ -40,25 +40,22 @@ public class Input {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return list;
     }
 
     public String[][] readFileField(String filePath){
-
-        List<String> test= mReader(filePath);
-        String[] fields = test.toArray(new String[0]);
-        String[] endFields = new String[fields.length+2];
+        String[] lineList = mReader(filePath).toArray(new String[0]);
+        String[] endFields = new String[lineList.length+2];
 
         for (int i = 0; i < (endFields.length) ; i++) {
             if(i<2){
                 endFields[i] = "nathing:0:false";
             }
             else{
-                endFields[i] = fields[i-2];
+                endFields[i] = lineList[i-2];
             }
         }
-        String[][] finalFields = new String[fields.length+2][3];
+        String[][] finalFields = new String[lineList.length+2][3];
 
         for (int i = 0; i < finalFields.length; i++) {
             for (int j = 0; j <finalFields[i].length ; j++) {
@@ -68,6 +65,16 @@ public class Input {
 
         }
         return finalFields;
+    }
+    public String[] readFilecomments(String filePath) {
+        String[] lineList = mReader(filePath+"\\").toArray(new String[0]);
+        String[] endcomments = new String[lineList.length + 2];
+        String[] finalComments = new String[endcomments.length];
+        for (int i = 0; i < finalComments.length; i++) {
+            finalComments = endcomments[i].split(":");
+            
+        }
+        return finalComments;
     }
 
     public String askPlayerName(){

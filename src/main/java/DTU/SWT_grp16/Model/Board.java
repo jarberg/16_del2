@@ -7,12 +7,12 @@ public class Board {
     private Field[] fields;
 
     public Board(String filePath){
-        setupFields(input.readFileField(filePath));
+        setupFields(input.readFileField(filePath), input.readFileField(filePath).length);
     }
 
-    private void setupFields(String[][] input){
+    private void setupFields(String[][] input, int fieldAmount){
         //Better implementation uses a file and gives Fields a name variable.
-        fields = new Field[13];
+        fields = new Field[fieldAmount];
         for (int i = 0; i <fields.length ; i++) {
             int ID = i;
             String name = input[i][0];

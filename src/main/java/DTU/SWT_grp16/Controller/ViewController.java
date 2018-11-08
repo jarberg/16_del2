@@ -1,5 +1,6 @@
 package DTU.SWT_grp16.Controller;
 
+import DTU.SWT_grp16.Model.Words;
 import DTU.SWT_grp16.View.Input;
 import DTU.SWT_grp16.View.Output;
 
@@ -7,6 +8,7 @@ public class ViewController {
 
     private Output output = new Output();
     private Input input = new Input();
+    Words words = new Words();
 
     public void printNewTurnMessage(String name){
         output.printNewTurnMessage(name);
@@ -40,7 +42,5 @@ public class ViewController {
     public void printLanguage(){
         System.out.println(output.printLanguage(input.getLanguage()));
     }
-    public void getFieldinfo(){
 
-    }
 }

@@ -1,0 +1,8 @@
+Du har valgt:
+Spiller:
+Indsæt dit navn:
+'s tur:
+Du rullede:
+Du landede på:
+Din nye balance er:
+Vinder!:	

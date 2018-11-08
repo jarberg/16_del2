@@ -14,12 +14,13 @@ public class GameController{
     private Board board;
     private String currentLanguage="";
     private String filePath ;
-    ViewController view = new ViewController();
+    private String[] comments;
+
 
     public void setupGame(){
 
-        view.printLanguageChoiceList();
-        currentLanguage = view.setlanguage();
+        viewController.printLanguageChoiceList();
+        currentLanguage = viewController.setlanguage();
         System.out.println("du har valgt "+currentLanguage);
         setFilePath();
 
@@ -29,7 +30,9 @@ public class GameController{
 
         playerlist = new Playerlist(player1Name, player2Name);
         diceCup = new DiceCup();
+
         board = new Board(filePath+"\\Fields.txt");
+
     }
 
     public void playGame(){
@@ -85,5 +88,7 @@ public class GameController{
     public void setFilePath(){
         filePath="src/main/textFiles/"+currentLanguage;
     }
+
+   // public int getFieldAmount[]{return }
 
 }
