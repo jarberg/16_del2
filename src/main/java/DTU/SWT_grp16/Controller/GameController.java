@@ -27,7 +27,7 @@ public class GameController{
         Player currentPlayer = playerlist.getCurrentPlayer();
         String currentName = currentPlayer.getName();
 
-        viewController.printNextTurnMessage(currentName);
+        viewController.printNewTurnMessage(currentName);
         viewController.waitForEnter();
 
 

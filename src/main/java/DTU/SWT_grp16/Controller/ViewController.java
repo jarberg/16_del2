@@ -3,15 +3,13 @@ package DTU.SWT_grp16.Controller;
 import DTU.SWT_grp16.View.Input;
 import DTU.SWT_grp16.View.Output;
 
-import java.util.Scanner;
-
 public class ViewController {
 
     private Output output = new Output();
     private Input input = new Input();
 
-    public void printNextTurnMessage(String name){
-        output.printNextTurnMessage(name);
+    public void printNewTurnMessage(String name){
+        output.printNewTurnMessage(name);
     }
 
     public void waitForEnter(){

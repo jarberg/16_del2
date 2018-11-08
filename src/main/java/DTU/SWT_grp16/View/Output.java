@@ -22,7 +22,7 @@ public class Output {
             System.out.println("taber!");
         }
     }
-    public void printNextTurnMessage(String name){
+    public void printNewTurnMessage(String name){
 
         System.out.println(name);
     }
