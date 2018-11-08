@@ -58,6 +58,7 @@ public class Output {
     public void addFieldToGUI(int id, String name){
         GUI_Street street = new GUI_Street();
         street.setTitle(name);
+        street.setSubText("");
         street.setDescription("this is a description");
         fields[id] = street;
     }
@@ -76,17 +77,6 @@ public class Output {
             stringBuilder.append(s + "\n");
         }
         gui.displayChanceCard(stringBuilder.toString());
-    }
-
-    public void printFieldMessage(int fieldID){
-        String fieldMessage = StringCollection.getFieldMessageByID(fieldID);
-        System.out.println(fieldMessage);
-
-    }
-
-    public String getFieldName(String currentField){
-        String fieldName ="";
-        return fieldName;
     }
 
     public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name){

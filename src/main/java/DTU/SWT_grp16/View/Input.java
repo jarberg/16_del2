@@ -12,6 +12,7 @@ public class Input {
 
     private Scanner scanner = new Scanner(System.in);
     private static int playerNumber;
+    private static String FIELD_MESSAGE_PATH;
     private String language="Dansk";
 
 
@@ -118,5 +119,20 @@ public class Input {
     public String getInput(){
         String input = scanner.nextLine();
         return input;
+    }
+
+    public static String getFieldMessageByID(int ID){
+        StringBuilder stringBuilder = new StringBuilder();
+        try(BufferedReader reader = new BufferedReader(new FileReader(FIELD_MESSAGE_PATH))){
+            while(reader.ready()){
+                String lineRead = reader.readLine();
+                if(lineRead.startsWith("id:"+ID)){
+                    stringBuilder.append(lineRead.substring(5));
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return stringBuilder.toString();
     }
 }
