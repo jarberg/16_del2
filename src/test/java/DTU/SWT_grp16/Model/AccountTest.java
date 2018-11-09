@@ -20,5 +20,7 @@ private Account account = new Account();
         assertEquals(2000,account.getBalance());
         account.changeBalance(-3000);
         assertEquals(0,account.getBalance());
+
     }
+
 }
