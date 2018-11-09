@@ -21,13 +21,11 @@ public class GameController{
         createGameObjectsAndSetupGUI();
         createPlayersWithGUI();
     }
-
     private void setupLanguageChoice(){
         view.printLanguageChoiceList();
         currentLanguage = view.setlanguage();
         setFilePath();
     }
-
     private void createGameObjectsAndSetupGUI(){
         diceCup = new DiceCup();
         board = new Board(filePath+"\\Fields.txt");
@@ -40,7 +38,6 @@ public class GameController{
         }
         viewController.makeGUI();
     }
-
     private void createPlayersWithGUI(){
         String player1Name = viewController.askName();
         String player2Name = viewController.askName();
@@ -49,6 +46,7 @@ public class GameController{
         playerlist = new Playerlist(player1Name, player2Name);
         viewController.addPlayers(player1Name, player2Name);
     }
+
 
     public void playGame(){
         Player currentPlayer = playerlist.getCurrentPlayer();
