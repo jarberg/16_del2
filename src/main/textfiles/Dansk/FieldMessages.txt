@@ -1,0 +1,11 @@
+id:2 Du fandt et stort tårn og besluttede dig for at gå op til toppen. Der lå 250kr!
+id:3 Du faldt ned i et krater og tabte 100 kr.
+id:4 Du fandt nogle flotte porte. Følelsen af righed rammer dig. Du får 100kr.
+id:5 Ørkenen er meget kold. Du bruger 20kr på varme.
+id:6 Du fandt din vej ind i en bemuret by. Nogen stjal dine penge, men du stjal tilbage! Hans pung var 180kr tungere.
+id:7 Du gik ind i et kloster. Du gik ud af et kloster.
+id:8 Du fumler din vej igennem en sort grotte. Du mister 70 kr.
+id:9 Du finder nogle hytter i bjergene. Der var penge i dem. Du får 60kr.
+id:10Du finder varevæggen! Den forsøger at kaster 80kr. efter den, og du får en bonustur!
+id:11Du finder hullet. Du taber 50kr derned.
+id:12Du fandt en guldmine i bjergene og tjente 650kr.

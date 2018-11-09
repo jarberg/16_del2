@@ -14,7 +14,8 @@ public class ViewController {
     }
 
     public void addFieldToGUI(int id, String name){
-        output.addFieldToGUI(id, name);
+        String description = input.getFieldDescriptionByID(id);
+        output.addFieldToGUI(id, name, description);
     }
 
     public void makeGUI(){
@@ -31,12 +32,9 @@ public class ViewController {
         output.printNewTurnMessage(name);
     }
 
-    public void waitForEnter(){
-        input.waitForEnter();
-    }
-
-    public void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner, String name){
-        output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner, name);
+    public void printTurnResult(int diceSum, int id, int currentBalance, boolean bonusTurn, boolean isWinner, String name, int points){
+        String message = Input.getFieldMessageByID(id);
+        output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner, name, points, message);
     }
 
     public void closeScanner(){

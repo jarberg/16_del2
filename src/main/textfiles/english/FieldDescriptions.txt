@@ -1,0 +1,11 @@
+id:2 A big and tall tower. Mostly big.
+id:3 A deep and wide crater. Mostly deep.
+id:4 Some nice and fancy palace gates.
+id:5 ~~Arabian nights~~
+id:6 A city with a wall around it.
+id:7 A monestary with some nice towers.
+id:8 A black cave. Atleast it looks black, it's very dark.
+id:9 Some huts in the mountains.
+id:10The Werewall. Who doesn't know it?
+id:11A bit like the crater.
+id:12The goldmine, where dreams get crushed.

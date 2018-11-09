@@ -1,10 +1,11 @@
 package DTU.SWT_grp16.Model;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Playerlist {
 
-    private ArrayDeque<Player> playerList;
+    private Deque<Player> playerList;
 
     public Playerlist(String... playerNames){
         playerList = new ArrayDeque<>();

@@ -17,10 +17,16 @@ public class GameController{
     ViewController view = new ViewController();
 
     public void setupGame(){
+        setupLanguageChoice();
+        createGameObjectsAndSetupGUI();
+        createPlayersWithGUI();
+    }
+    private void setupLanguageChoice(){
         view.printLanguageChoiceList();
         currentLanguage = view.setlanguage();
         setFilePath();
-
+    }
+    private void createGameObjectsAndSetupGUI(){
         diceCup = new DiceCup();
         board = new Board(filePath+"\\Fields.txt");
         viewController.guiSetup();
@@ -31,7 +37,8 @@ public class GameController{
                 viewController.addFieldToGUI(fieldID,name);
         }
         viewController.makeGUI();
-
+    }
+    private void createPlayersWithGUI(){
         String player1Name = viewController.askName();
         String player2Name = viewController.askName();
         if(player1Name.equals(player2Name))
@@ -40,24 +47,23 @@ public class GameController{
         viewController.addPlayers(player1Name, player2Name);
     }
 
+
     public void playGame(){
         Player currentPlayer = playerlist.getCurrentPlayer();
         String currentName = currentPlayer.getName();
-
         viewController.printNewTurnMessage(currentName);
-        //viewController.waitForEnter();
 
         diceCup.roll();
         int sum = diceCup.getSum();
         Field currentField = getFieldByID(sum);
-
         resolveTurnLogic(currentPlayer, currentField);
-
         int id = currentField.getID();
         int balance = currentPlayer.getBalance();
         boolean bonusTurn = currentPlayer.hasBonusTurn();
         boolean isWinner = currentPlayer.isWinner();
-        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner, currentPlayer.getName());
+        String playerName = currentPlayer.getName();
+        int fieldPoints = currentField.getPoints();
+        viewController.printTurnResult(sum, id, balance, bonusTurn, isWinner, playerName, fieldPoints);
 
         boolean gameIsNotOver = !currentPlayer.isWinner();
         if(gameIsNotOver){

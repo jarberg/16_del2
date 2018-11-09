@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class Output {
 
-    private static int MAX_FIELD_COUNT = 40;
+    private static int MAX_FIELD_COUNT = 30;
     private static int GAME_FIELD_COUNT = 12;
     private GUI_Field[] fields;
     private GUI gui;
@@ -55,10 +55,11 @@ public class Output {
         fields[0].setCar(player2, true);
     }
 
-    public void addFieldToGUI(int id, String name){
+    public void addFieldToGUI(int id, String name, String description){
         GUI_Street street = new GUI_Street();
         street.setTitle(name);
-        street.setDescription("this is a description");
+        street.setSubText("");
+        street.setDescription(description);
         fields[id] = street;
     }
 
@@ -78,18 +79,9 @@ public class Output {
         gui.displayChanceCard(stringBuilder.toString());
     }
 
-    public void printFieldMessage(int fieldID){
-        String fieldMessage = StringCollection.getFieldMessageByID(fieldID);
-        System.out.println(fieldMessage);
+    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name, int points, String message){
 
-    }
-
-    public String getFieldName(String currentField){
-        String fieldName ="";
-        return fieldName;
-    }
-
-    public void printTurnResult(int diceSum, int ID, int balance, boolean bonusTurn, boolean isWinner, String name){
+        gui.showMessage("You rolled "+diceSum+"!"+" "+message);
         GUI_Player player;
         if(name.equals(player1.getName()))
             player = player1;
